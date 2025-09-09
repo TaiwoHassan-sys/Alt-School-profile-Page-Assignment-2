@@ -1,0 +1,82 @@
+/* --- General Page Styling --- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 20px;
+}
+
+.page-container {
+    display: grid;
+    gap: 20px; /* Space between the grid items */
+    max-width: 900px;
+    margin: 0 auto; /* Center the container on the page */
+}
+
+/* --- Top Section Layout (Mobile-First) --- */
+
+.profile-intro-section {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px; /* Rounded corners for the container box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* A subtle shadow */
+}
+
+/* --- Profile Picture Placeholder --- */
+
+.profile-circle {
+    width: 120px; /* Fixed size for the circle */
+    height: 120px;
+    background-color: #a7a7a7; /* A neutral color for the placeholder */
+    border-radius: 50%; /* This is the magic for a perfect circle! */
+    justify-self: center; /* Center the circle horizontally in its grid cell */
+    align-self: center; /* Center the circle vertically in its grid cell */
+}
+
+/* --- Hobbies and Aspirations Section --- */
+
+.hobbies-aspirations-section {
+    display: grid;
+    gap: 20px;
+}
+
+/* --- Individual Content Boxes --- */
+
+.hobbies-box, .aspirations-box {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Rounded corners for the boxes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+}
+
+/* --- Responsiveness: Adjusting the layout for larger screens (e.g., desktops) --- */
+
+/*
+  This is a media query. Any styles inside this block will only apply when
+  the screen width is 768 pixels or wider.
+*/
+@media (min-width: 768px) {
+    
+    .profile-intro-section {
+        grid-template-columns: 150px 1fr; /* 150px for the circle, 1fr for the text */
+    }
+
+    /*
+      The lower section will also become a two-column grid with equal-sized columns.
+    */
+    .hobbies-aspirations-section {
+        grid-template-columns: 1fr 1fr; /* Two equal-sized columns */
+    }
+
+}
